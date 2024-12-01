@@ -4,7 +4,7 @@ import Persons from "./components/Persons";
 import AddPerson from "./components/AddPerson";
 import axios from "axios";
 
-const baseUrl = "http://localhost:7777/persons"
+const baseUrl = process.env.API_BASE_URL || "http://130.193.54.9/api/persons"
 
 class App extends React.Component {
 
