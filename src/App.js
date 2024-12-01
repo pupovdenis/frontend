@@ -4,14 +4,14 @@ import Persons from "./components/Persons";
 import AddPerson from "./components/AddPerson";
 import axios from "axios";
 
-const baseUrl = "http://localhost:7777/persons"
+const baseUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:7777"
 
 class App extends React.Component {
 
     constructor(props) {
         super(props);
 
-        axios.get(baseUrl).then((res) => {
+        axios.get(baseUrl + "/persons").then((res) => {
             this.setState({persons: res.data})
         })
 
